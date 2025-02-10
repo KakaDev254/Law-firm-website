@@ -1,0 +1,36 @@
+{% extends 'main.html'%} {% load static %} {% block title %} {{
+practice_area.name }} {% endblock title %} {% block content %}
+<br />
+<br />
+<br />
+<br />
+<div class="container my-5">
+  <div class="row">
+    <!-- Main Content Area -->
+    <div class="col-lg-8 col-md-7">
+      <div id="practice-content">
+        <h1 class="practice-title">Welcome to Our Practice Areas</h1>
+        <h3 class="lead">{{ practice_area.name }}.</h3>
+        <i class="fas {{ practice_area.icon }}"></i>
+        <p>{{ practice_area.detailed_description }}</p>
+        <a href="{% url 'home' %}">Back to Home</a>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4 col-md-5">
+      <h3 class="sidebar-title">Our Legal Services</h3>
+      <ul class="list-group">
+        {% for area in practice_areas %}
+        <li>
+          <a href="{% url 'practice_area_detail' area.slug %}">
+            <i class="fas {{ area.icon }}"></i> {{ area.name }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

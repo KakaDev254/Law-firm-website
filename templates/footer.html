@@ -1,0 +1,95 @@
+{% load static %}
+<footer class="footer text-white pt-5 pb-4">
+  <div style="background-image: url('{% static "images/library.jpg" %}'); height: 400px;" class="overlay"></div>
+  <div class="container text-center text-md-left position-relative">
+    <div class="row">
+      <!-- About Us Column -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">About Us</h5>
+        <p>
+          E.M David Advocates is a dynamic law firm located in Westlands,
+          Nairobi, committed to providing top-tier legal services to meet each
+          client's unique needs.
+        </p>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Quick Links</h5>
+        <p>
+          <a
+            href="{%url 'home'%}"
+            class="text-white"
+            style="text-decoration: none"
+            >Home</a
+          >
+        </p>
+
+        <p>
+          <a href="#" class="text-white" style="text-decoration: none"
+            >Practice Areas</a
+          >
+        </p>
+        <p>
+          <a href="{% url 'about_us' %}" class="text-white" style="text-decoration: none"
+            >About Us</a
+          >
+        </p>
+        <p>
+          <a href="{% url 'home' %}#contact" class="text-white" style="text-decoration: none"
+            >Contact Us</a
+          >
+        </p>
+      </div>
+
+      <!-- Contact Us Column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Contact Us</h5>
+        <p><i class="fas fa-home mr-3"></i> Westlands, Nairobi, Kenya</p>
+        <p><i class="fas fa-envelope mr-3"></i> info@gdavidadvocates.com</p>
+        <p><i class="fas fa-phone mr-3"></i> +254 727 507 705</p>
+        <p><i class="fas fa-print mr-3"></i> +254 700 000 001</p>
+      </div>
+
+      <!-- Social Media Column -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Follow Us</h5>
+
+        <div class="social-icons">
+          <a
+            href="https://www.facebook.com/YourPage"
+            target="_blank"
+            class="me-3"
+          >
+          <i class='bx bxl-facebook-square bx-md'></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/YourProfile"
+            target="_blank"
+            class="me-3"
+          >
+          <i class='bx bxl-linkedin  bx-md'></i>
+          </a>
+          <a href="https://www.instagram.com/YourProfile" target="_blank">
+            <i class='bx bxl-instagram-alt bx-md' ></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="mb-4" />
+
+    <!-- Copyright Row -->
+    <div class="row">
+      <div class="col-md-7 col-lg-8">
+        <p class="text-center text-md-left">
+          © {% now "Y" %} E.M David Advocates. All rights reserved.
+        </p>
+      </div>
+
+      <div class="col-md-5 col-lg-4">
+        <p class="text-center text-md-right">Designed by KakaDev</p>
+      </div>
+    </div>
+  </div>
+</footer>

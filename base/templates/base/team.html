@@ -1,0 +1,42 @@
+{% extends 'main.html' %} {% load static %} {% block title %} Our Team
+{%endblock title %} {% block content %}
+
+<body>
+  <section class="team-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Meet Our Team</h2>
+        <hr>
+        <p class="text-muted">
+          Experienced legal professionals dedicated to providing the best legal
+          solutions.
+        </p>
+      </div>
+      <hr />
+      <div class="row g-4">
+        <!-- Team Member 1 -->
+        {% for member in team_members %}
+        <div class="col-md-4">
+          <div class="card team-card text-center p-4">
+            <img
+              src="{{ member.image.url }}"
+              class="img-fluid mx-auto d-block"
+              alt="{{ member.name }}"
+            />
+            <div class="team-info">
+              <h5>{{ member.name }}</h5>
+              <p>{{ member.position }}</p>
+              <div class="social-icons">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</body>
+{% endblock content %}
