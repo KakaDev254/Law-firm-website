@@ -2,6 +2,13 @@
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env file
+
+SUPERUSER_USERNAME = os.getenv("DJANGO_SUPERUSER_USERNAME")
+SUPERUSER_EMAIL = os.getenv("DJANGO_SUPERUSER_EMAIL")
+SUPERUSER_PASSWORD = os.getenv("DJANGO_SUPERUSER_PASSWORD")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'nuru.urls'
