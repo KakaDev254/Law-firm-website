@@ -121,13 +121,13 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   margin-top: 2rem;
-  background-color: #eb9405;
+  background-color: #507687;
   color: white;
   font-weight: 400;
   text-align: center;
 }
 .custom-btn:hover {
-  background-color: #815206;
+  background-color: #0a364a;
 }
 .part2 {
   background-color: #f8f9fa;
@@ -171,7 +171,7 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 .card i {
-  color: #eb9405;
+  color: #507687;
   margin-bottom: 15px;
 }
 .card-title {
@@ -255,18 +255,8 @@
 
 .footer {
   position: relative;
-  background: url("../static/images/book.jpg") no-repeat center center/cover;
+  background-color: #507687;
   color: white;
-}
-
-.footer .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* Black overlay with 60% opacity */
-  z-index: 1;
 }
 
 .footer .container {
