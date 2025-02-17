@@ -7,7 +7,7 @@ from .forms import CommentForm
 
 
 def home(request):
-    blogs = Blog.objects.order_by('-published_at')[:5]
+    blogs = Blog.objects.order_by('-published_at')[:4]
     practice_areas = PracticeArea.objects.all()
     
     context={'practice_areas': practice_areas,

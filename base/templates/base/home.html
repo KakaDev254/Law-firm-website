@@ -1,5 +1,4 @@
-{% extends 'main.html'%} {% load static %} {% block title %}Home - G.M & CO
-Advocates{% endblock title %} {% block content %}
+{% extends 'main.html'%} {% load static %} {% block title %}Home - G.M ORINA & CO.ADVOCATES{% endblock title %} {% block content %}
 <div  style="background-image: url('{% static "images/book.jpg" %}'); height: 80vh;" class="part1">
   <h1>Expert Legal Representation You Can Trust</h1>
   <p>Call Now for Immediate Assistance</p>
@@ -12,13 +11,11 @@ Advocates{% endblock title %} {% block content %}
       <div class="col-lg-6 col-md-12 who_we_are">
         <h1>Who we are</h1>
         <p>
-          At E.M David & Co. Advocates, we pride ourselves on providing top-tier
-          legal services with a focus on professionalism, dedication, and client
-          satisfaction. Established by Advocate Godfrey Orina, we are committed
-          to excellence in all our legal endeavors, serving both individuals and
-          businesses in Kenya and beyond. Our team combines deep expertise in
-          various fields of law to ensure our clients receive comprehensive
-          legal support.
+          G.M Orina & Co. Advocates is a medium sized 
+          law firm providing legal counsel and solutions 
+          to a wide range of clients in Kenya, Africa and 
+          globally.
+
         </p>
         <br />
         <p>
@@ -49,9 +46,7 @@ Advocates{% endblock title %} {% block content %}
           <div class="card-body">
             <h5 class="card-title">{{ area.name }}</h5>
             <p class="card-text">
-              Our corporate law practice offers comprehensive legal services to
-              businesses of all sizes, from startups to multinational
-              corporations.
+              {{ practice_area.detailed_description|safe }}
             </p>
             <a
               href="{% url 'practice_area_detail' area.slug %}"
@@ -108,22 +103,36 @@ Advocates{% endblock title %} {% block content %}
       <!-- Contact Information -->
       <div class="col-md-6 mb-4">
         <h3>Contact Information</h3>
-        <p><strong>Address:</strong> Westlands, Nairobi, Kenya</p>
+        <p>
+          <strong>Address:</strong> G.M Orina & Co. Advocates <br />
+          Krishna Centre, 7th Floor, Suite 712 <br />
+          Woodvale Groove, Westlands <br />
+          P.O Box 33499-00600, Nairobi
+        </p>
         <p>
           <strong>Email:</strong>
-          <a href="mailto:info@gmorinaadvocates.com"
-            >info@gmorinaadvocates.com</a
-          >
+          <a href="mailto:gmorinaadvocates@gmail.com">gmorinaadvocates@gmail.com</a>
         </p>
         <p>
           <strong>Phone:</strong>
-          <a href="tel:+254700000000">+254 700 000 000</a>
+          <a href="tel:+254712694826">+254712694826</a>
         </p>
-        <p><strong>Fax:</strong> +254 700 000 001</p>
+        
         <h4>Office Hours</h4>
         <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
         <p>Saturday: 9:00 AM - 2:00 PM</p>
         <p>Sunday: Closed</p>
+
+        <!-- WhatsApp Chat Button -->
+        <div class="whatsapp-chat">
+          <a
+            href="https://wa.me/254712694826"
+            target="_blank"
+            class="whatsapp-button"
+          >
+            <i class="fab fa-whatsapp"></i> Chat with Us on WhatsApp
+          </a>
+        </div>
       </div>
 
       <!-- Google Map Embed -->
@@ -144,4 +153,5 @@ Advocates{% endblock title %} {% block content %}
   </div>
   <hr />
 </section>
+
 {% endblock content %}

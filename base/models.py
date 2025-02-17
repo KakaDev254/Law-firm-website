@@ -1,11 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from ckeditor.fields import RichTextField
 
 class Blog(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=100, default="Admin")
-    content = models.TextField()
+    content = RichTextField()
     cover_image = models.ImageField(upload_to='blog_covers/', default='default_cover.jpg',null=True, blank=True)
     published_at = models.DateTimeField(default=timezone.now)
 
@@ -25,7 +26,7 @@ class Comment(models.Model):
 class PracticeArea(models.Model):
     name = models.CharField(max_length=100, verbose_name="Area of Practice")
     icon = models.CharField(max_length=50, help_text="Font Awesome icon class, e.g., 'fa-scale-balanced'")
-    detailed_description = models.TextField(verbose_name="Detailed Description")
+    detailed_description = RichTextField(verbose_name="Detailed Description")
     slug = models.SlugField(unique=True, help_text="URL-friendly name for the practice area")
 
     def __str__(self):
