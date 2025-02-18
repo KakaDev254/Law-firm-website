@@ -84,7 +84,7 @@
   padding-bottom: 3rem;
   font-weight: 600;
   font-size: 48px;
-  color: #eb9405;
+  color: #ec8305;
   font-family: "Inter", serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -241,7 +241,7 @@
   align-items: center;
   gap: 8px;
   background-color: #25d366;
-  /color: white;
+  color: white;
   padding: 10px 15px;
   border-radius: 5px;
   text-decoration: none;
@@ -279,10 +279,6 @@
   transition: color 0.3s;
 }
 
-.footer .social-icons a:hover {
-  color: #007bff;
-}
-/* blog page css */
 /* Article Styling */
 .article-title {
   font-size: 28px;
@@ -331,7 +327,7 @@
 .other-articles a {
   text-decoration: none;
   font-size: 16px;
-  color: #007bff;
+  color: #507687;
   font-weight: bold;
 }
 
