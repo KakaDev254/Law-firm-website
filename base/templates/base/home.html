@@ -84,10 +84,9 @@
               >Published on: {{ blog.published_at}} By {{ blog.author }}</small
             >
             <br />
-            <a href="{% url 'blog_page' blog.id %}" class="btn btn-primary"
-            style="background-color: #507687; border-color: #507687; color: white;">
-             Read More
-         </a>
+            <a href="{% url 'blog_page' blog.id %}" class="btn btn-primary read-more-btn">
+              Read More
+            </a>
           </div>
         </div>
       </div>

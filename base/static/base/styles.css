@@ -11,6 +11,7 @@
 
 .top-bar {
   background-color: #ff2929;
+  color: white;
   padding: 10px 0;
   font-size: 14px;
 }
@@ -129,6 +130,21 @@
 .custom-btn:hover {
   background-color: #0a364a;
 }
+
+@media (max-width: 1024px) {
+  .part1 {
+    padding-top: 4rem;
+  }
+}
+
+/* Adjust padding for smaller screens */
+@media (max-width: 768px) {
+  .part1 {
+    padding-top: 3rem;
+  }
+}
+
+/* part 2 css */
 .part2 {
   background-color: #f8f9fa;
   padding: 60px 20px;
@@ -193,6 +209,18 @@
   color: #825308;
   text-decoration: underline;
 }
+.read-more-btn {
+  background-color: #507687;
+  border-color: #507687;
+  color: white;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.read-more-btn:hover {
+  background-color: #405a6b; /* Darker shade */
+  border-color: #405a6b;
+}
+
 @media (max-width: 576px) {
   .card {
     width: 100% !important;
@@ -366,4 +394,116 @@
 }
 .social-icons a:hover {
   color: #007bff;
+}
+/* Main Content Area */
+#practice-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.practice-title {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.lead {
+  font-size: 1.5rem;
+  color: #34495e;
+}
+
+#practice-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Sidebar */
+.sidebar-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.list-group {
+  padding: 0;
+  list-style: none;
+}
+
+.list-group li {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-group li a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+}
+
+.list-group li a:hover {
+  color: #0056b3;
+}
+
+.list-group i {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* Icons */
+.fas {
+  font-size: 2rem;
+  color: #507687;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .practice-title {
+    font-size: 2rem;
+  }
+  .lead {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .practice-title {
+    font-size: 1.8rem;
+  }
+  .lead {
+    font-size: 1.2rem;
+  }
+  #practice-content {
+    padding: 20px;
+  }
+  .list-group li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 10px;
+  }
+  #practice-content {
+    padding: 15px;
+  }
+  .practice-title {
+    font-size: 1.5rem;
+  }
+  .lead {
+    font-size: 1.1rem;
+  }
+  .list-group li {
+    font-size: 0.95rem;
+  }
+  .fas {
+    font-size: 1.6rem;
+  }
 }
