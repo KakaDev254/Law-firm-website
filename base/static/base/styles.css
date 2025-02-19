@@ -133,14 +133,14 @@
 
 @media (max-width: 1024px) {
   .part1 {
-    padding-top: 4rem;
+    padding-top: 2rem;
   }
 }
 
 /* Adjust padding for smaller screens */
 @media (max-width: 768px) {
   .part1 {
-    padding-top: 3rem;
+    padding-top: 1rem;
   }
 }
 
@@ -506,4 +506,20 @@
   .fas {
     font-size: 1.6rem;
   }
+}
+
+.hero-section {
+  background: #fff;
+  color: #000;
+}
+.vision-mission {
+  background: #f8f9fa;
+}
+.core-values h5 {
+  color: #507687;
+}
+.whatsapp-float {
+  position: static;
+  bottom: 20px;
+  left: 20px;
 }
