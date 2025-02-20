@@ -140,7 +140,7 @@
 /* Adjust padding for smaller screens */
 @media (max-width: 768px) {
   .part1 {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
   }
 }
 
