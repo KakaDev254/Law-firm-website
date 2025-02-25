@@ -65,83 +65,105 @@
     text-align: center;
   }
 }
-/* Main navbar styles */
-
-.part1 {
-  background-image: url("images/book.jpg");
+/* Ensure the carousel is responsive */
+#legalCarousel {
+  height: 80vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 80vh;
-  display: block;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  padding-top: 6rem;
 }
-.part1 h1 {
-  padding-top: 8rem;
-  padding-bottom: 3rem;
-  font-weight: 600;
-  font-size: 48px;
-  color: #ec8305;
-  font-family: "Inter", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-.part1 p {
-  color: white;
-  font-weight: 500;
-  font-size: 24px;
-}
-.part1::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: #507687;
+
+/* Dark Overlay for Better Readability */
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0;
-  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  z-index: 1;
 }
-.part1 > * {
-  z-index: 10;
+
+/* Ensure Content is Above Overlay */
+.slide-content {
   position: relative;
-}
-.custom-btn {
-  width: 8rem;
-  height: 3rem;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  margin-top: 2rem;
-  background-color: #507687;
-  color: white;
-  font-weight: 400;
-  text-align: center;
-}
-.custom-btn:hover {
-  background-color: #0a364a;
+  z-index: 2;
 }
 
-@media (max-width: 1024px) {
-  .part1 {
-    padding-top: 2rem;
-  }
-}
-
-/* Adjust padding for smaller screens */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .part1 {
-    padding-top: 0.5rem;
+  #legalCarousel {
+    height: 60vh;
   }
+  .slide-content {
+    height: 60vh;
+  }
+  .custom-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+/* Text and Image Animations */
+.fade-in-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.fade-in-image {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: fadeInLeft 1s ease-in-out forwards;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Custom Button Styling */
+.custom-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Custom Carousel Controls */
+.custom-control {
+  filter: invert(28%) sepia(99%) saturate(2231%) hue-rotate(212deg)
+    brightness(95%) contrast(90%);
+}
+
+.custom-control:hover {
+  transform: scale(1.1);
 }
 
 /* part 2 css */

@@ -1,8 +1,50 @@
-{% extends 'main.html'%} {% load static %} {% block title %}Home - G.M ORINA & CO.ADVOCATES{% endblock title %} {% block content %}
-<div  style="background-image: url('{% static "images/book.jpg" %}'); height: 80vh;" class="part1">
-  <h1>Expert Legal Representation You Can Trust</h1>
-  <p>Call Now for Immediate Assistance</p>
-  <button type="button" class="custom-btn">Get in Touch</button>
+{% extends 'main.html'%} {% load static %} {% block title %}Home - G.M ORINA &
+CO.ADVOCATES{% endblock title %} {% block content %}
+
+<div id="legalCarousel" class="carousel slide" data-bs-ride="carousel" 
+     style="background-image: url('{% static "images/book.jpg" %}'); height: 80vh; background-size: cover; background-position: center;">
+  
+  <div class="carousel-inner">
+
+    <!-- First Slide -->
+    <div class="carousel-item active">
+      <div class="overlay"></div> <!-- Dark Overlay -->
+      <div class="d-flex align-items-center justify-content-center text-white text-center slide-content" style="height: 80vh;">
+        <div class="container">
+          <h1 class="fade-in-text">Expert Legal Representation You Can Trust</h1>
+          <p class="fade-in-text">Call Now for Immediate Assistance</p>
+          <button type="button" class="custom-btn">Book an Appointment</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Slide -->
+    <div class="carousel-item">
+      <div class="overlay"></div> <!-- Dark Overlay -->
+      <div class="container d-flex align-items-center justify-content-center slide-content" style="height: 80vh;">
+        <div class="row w-100">
+          <div class="col-md-6 text-center text-md-start fade-in-image">
+            <img src="{% static 'images/logo.png' %}" class="img-fluid rounded" alt="Law Firm">
+          </div>
+          <div class="col-md-6 d-flex align-items-center">
+            <div class="fade-in-text text-center text-md-start">
+              <p class="fs-4">We are committed to delivering outstanding legal services tailored to your needs.</p>
+              <p class="fs-5">Contact us today and let our experienced legal team assist you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Carousel Controls -->
+  <button class="carousel-control-prev custom-control" type="button" data-bs-target="#legalCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next custom-control" type="button" data-bs-target="#legalCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
 </div>
 <div class="part2">
   <div class="container">
@@ -11,11 +53,9 @@
       <div class="col-lg-6 col-md-12 who_we_are">
         <h1>Who we are</h1>
         <p>
-          G.M Orina & Co. Advocates is a medium sized 
-          law firm providing legal counsel and solutions 
-          to a wide range of clients in Kenya, Africa and 
+          G.M Orina & Co. Advocates is a medium sized law firm providing legal
+          counsel and solutions to a wide range of clients in Kenya, Africa and
           globally.
-
         </p>
         <br />
         <p>
@@ -84,7 +124,10 @@
               >Published on: {{ blog.published_at}} By {{ blog.author }}</small
             >
             <br />
-            <a href="{% url 'blog_page' blog.id %}" class="btn btn-primary read-more-btn">
+            <a
+              href="{% url 'blog_page' blog.id %}"
+              class="btn btn-primary read-more-btn"
+            >
               Read More
             </a>
           </div>
@@ -110,13 +153,15 @@
         </p>
         <p>
           <strong>Email:</strong>
-          <a href="mailto:gmorinaadvocates@gmail.com">gmorinaadvocates@gmail.com</a>
+          <a href="mailto:gmorinaadvocates@gmail.com"
+            >gmorinaadvocates@gmail.com</a
+          >
         </p>
         <p>
           <strong>Phone:</strong>
           <a href="tel:+254712694826">+254712694826</a>
         </p>
-        
+
         <h4>Office Hours</h4>
         <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
         <p>Saturday: 9:00 AM - 2:00 PM</p>
@@ -138,8 +183,15 @@
       <div class="col-md-6 mb-4">
         <h3>Find Us Here</h3>
         <div class="embed-responsive">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3988.847273580759!2d36.80129707496572!3d-1.2641247987238449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwMTUnNTAuOSJTIDM2wrA0OCcxMy45IkU!5e0!3m2!1sen!2ske!4v1739821944158!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3988.847273580759!2d36.80129707496572!3d-1.2641247987238449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwMTUnNTAuOSJTIDM2wrA0OCcxMy45IkU!5e0!3m2!1sen!2ske!4v1739821944158!5m2!1sen!2ske"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </div>
