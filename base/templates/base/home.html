@@ -1,9 +1,9 @@
 {% extends 'main.html'%} {% load static %} {% block title %}Home - G.M ORINA &
 CO.ADVOCATES{% endblock title %} {% block content %}
 
-
+<br>
 <div id="legalCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"
-     style="background-image: url('{% static "images/book.jpg" %}'); height: 60vh; background-size: cover; background-position: center;">
+     style="background-image: url('{% static "images/book.jpg" %}'); background-size: cover; background-position: center;">
   
   <div class="carousel-inner">
 
@@ -12,9 +12,9 @@ CO.ADVOCATES{% endblock title %} {% block content %}
       <div class="overlay"></div> 
       <div class="d-flex align-items-center justify-content-center text-white text-center slide-content" style="height: 80vh;">
         <div class="container">
-          <h1 class="fade-in-text">Expert Legal Representation You Can Trust</h1>
+          <h1 class="fade-in-text fs-1">Expert Legal Representation You Can Trust</h1>
           <p class="fade-in-text">Call Now for Immediate Assistance</p>
-          <button type="button" class="custom-btn">Book an Appointment</button>
+          <button type="button" class="custom-btn">Get in Touch</button>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@ CO.ADVOCATES{% endblock title %} {% block content %}
       <div class="container d-flex align-items-center justify-content-center slide-content" style="height: 80vh;">
         <div class="row w-100">
           <div class="col-md-6 text-center text-md-start fade-in-image">
-            <img src="{% static 'images/logo.png' %}" class="img-fluid rounded" alt="Law Firm">
+            <img src="{% static 'images/white.jpg' %}" class="img-fluid rounded" alt="Law Firm">
           </div>
           <div class="col-md-6 d-flex align-items-center">
             <div class="fade-in-text text-center text-md-start">
@@ -47,6 +47,7 @@ CO.ADVOCATES{% endblock title %} {% block content %}
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
   </button>
 </div>
+<section>
 <div class="container">
   <div class="row why-container">
       <!-- Text Section -->
@@ -60,40 +61,59 @@ CO.ADVOCATES{% endblock title %} {% block content %}
 
       <!-- Image Section -->
       <div class="col-lg-6 col-md-12 image-section">
-          <img src="{% static 'images/white.jpg' %}" alt="Law Firm Logo">
+          <img src="{% static 'images/logo.png' %}" alt="Law Firm Logo">
       </div>
   </div>
 </div>
+</section>
 <hr />
+
 <div class="part3">
   <div class="container">
-    <h1>Our Practice Areas</h1>
-    <div class="row gy-4">
-      <!-- Practice Area 1 -->
-      {% for area in practice_areas %}
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card text-center p-3">
-          <i class="{{ area.icon }}"></i>
-          <div class="card-body">
-            <h5 class="card-title">{{ area.name }}</h5>
-            <p class="card-text">
-              {{ practice_area.detailed_description|safe }}
-            </p>
-            <a
-              href="{% url 'practice_area_detail' area.slug %}"
-              class="card-link"
-              >Read more..</a
-            >
-          </div>
-        </div>
-      </div>
-      {% endfor %}
+    <h1 class="text-center mb-4">Our Practice Areas</h1>
 
-      <!-- Add remaining cards in a similar way -->
+    <div id="practiceAreasCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        {% for area in practice_areas %}
+          {% if forloop.counter0|divisibleby:2 %}
+            <div class="carousel-item 2 {% if forloop.first %}active{% endif %}">
+              <div class="row justify-content-center">
+          {% endif %}
+
+          <div class="col-md-6">
+            <div class="card text-center p-3 shadow-sm">
+              <i class="{{ area.icon }} fa-3x mb-3"></i>
+              <div class="card-body">
+                <h5 class="card-title">{{ area.name }}</h5>
+                <p class="card-text">
+                  {{ practice_area.detailed_description|safe }}
+                </p>
+                <a href="{% url 'practice_area_detail' area.slug %}" class="card-link">
+                  Read more..
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {% if forloop.counter0|add:1|divisibleby:2 or forloop.last %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#practiceAreasCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#practiceAreasCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </div>
 </div>
-<hr />
+
 <section class="container-blog">
   <div class="container">
     <h1>Articles</h1>
@@ -109,18 +129,13 @@ CO.ADVOCATES{% endblock title %} {% block content %}
           />
 
           <div class="card-body">
-            <h5 class="card-title">{{ blog.title }}</h5>
+            <a href="{% url 'blog_page' blog.id %}"><h5 class="card-title">{{ blog.title }}</h5> </a>
 
             <small
               >Published on: {{ blog.published_at}} By {{ blog.author }}</small
             >
             <br />
-            <a
-              href="{% url 'blog_page' blog.id %}"
-              class="btn btn-primary read-more-btn"
-            >
-              Read More
-            </a>
+          
           </div>
         </div>
       </div>
