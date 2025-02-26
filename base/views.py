@@ -56,6 +56,6 @@ def practice_area_detail(request, slug):
 
 def careers(request):
     jobs = Job.objects.all()
-    return render(request, 'careers.html', {'jobs': jobs})
+    return render(request, 'base/careers.html', {'jobs': jobs})
 
 
