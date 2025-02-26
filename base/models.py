@@ -38,4 +38,13 @@ class TeamMember(models.Model):
     image = models.ImageField(upload_to='team_images/')
 
     def __str__(self):
-        return self.name   
+        return self.name 
+    
+class Job(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    location = models.CharField(max_length=255)
+    posted_on = models.DateField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.title  

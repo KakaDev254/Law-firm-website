@@ -103,6 +103,9 @@
     padding: 8px 16px;
   }
 }
+.fade-in-text p {
+  color: white;
+}
 
 /* Text and Image Animations */
 .fade-in-text {
@@ -153,6 +156,7 @@
 
 .custom-btn:hover {
   background-color: #d7dce0;
+  color: #000;
   transform: scale(1.05);
 }
 
@@ -192,7 +196,7 @@
 }
 .part3 {
   padding: 60px 20px;
-  background-color: #f8f9fa;
+  background-color: rgb(82, 124, 239);
 }
 .part3 h1 {
   text-align: center;

@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
-from .models import Blog, Comment, PracticeArea, TeamMember
+from .models import Blog, Comment, PracticeArea, TeamMember, Job
 from .forms import CommentForm
 
 
@@ -53,5 +53,9 @@ def practice_area_detail(request, slug):
     practice_area = get_object_or_404(PracticeArea, slug=slug)
     practice_areas = PracticeArea.objects.all()
     return render(request, 'base/practice.html', {'practice_area': practice_area, 'practice_areas': practice_areas,})
+
+def careers(request):
+    jobs = Job.objects.all()
+    return render(request, 'careers.html', {'jobs': jobs})
 
 

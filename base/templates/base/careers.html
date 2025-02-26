@@ -1,0 +1,23 @@
+{% extends 'main.html' %} {% load static %} {% block title %} Our Team
+{%endblock title %} {% block content %}
+<div class="container mx-auto p-6">
+  <h1 class="text-3xl font-bold mb-4">Careers</h1>
+
+  {% if jobs %}
+  <ul class="space-y-4">
+    {% for job in jobs %}
+    <li class="border p-4 rounded-lg shadow-md">
+      <h2 class="text-xl font-semibold">{{ job.title }}</h2>
+      <p class="text-gray-600">{{ job.location }}</p>
+      <p class="mt-2">{{ job.description }}</p>
+      <p class="text-sm text-gray-500">Posted on: {{ job.posted_on }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="text-gray-600">
+    There are no open positions at the moment. Please check back later.
+  </p>
+  {% endif %}
+</div>
+{% endblock %}
