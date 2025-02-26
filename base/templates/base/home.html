@@ -3,7 +3,7 @@ CO.ADVOCATES{% endblock title %} {% block content %}
 
 
 <div id="legalCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"
-     style="background-image: url('{% static "images/book.jpg" %}'); height: 80vh; background-size: cover; background-position: center;">
+     style="background-image: url('{% static "images/book.jpg" %}'); height: 60vh; background-size: cover; background-position: center;">
   
   <div class="carousel-inner">
 
@@ -47,31 +47,21 @@ CO.ADVOCATES{% endblock title %} {% block content %}
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
   </button>
 </div>
-<div class="part2">
-  <div class="container">
-    <div class="row align-items-center">
+<div class="container">
+  <div class="row why-container">
       <!-- Text Section -->
-      <div class="col-lg-6 col-md-12 who_we_are">
-        <h1>Who we are</h1>
-        <p>
-          G.M Orina & Co. Advocates is a medium sized law firm providing legal
-          counsel and solutions to a wide range of clients in Kenya, Africa and
-          globally.
-        </p>
-        <br />
-        <p>
-          Our mission is to protect our clients’ interests while maintaining the
-          highest standards of integrity. Whether through litigation, advisory
-          services, or dispute resolution, we are here to provide effective
-          solutions tailored to meet the unique needs of every client.
-        </p>
-        <button class="custom-btn" type="button">About us</button>
+      <div class="col-lg-6 col-md-12 text-section">
+          <h2>Why Choose Us:</h2>
+          <p>
+              G.M Orina & Co. Advocates is a medium-sized law firm providing legal
+              counsel and solutions to a wide range of clients in Kenya, Africa, and globally.
+          </p>
       </div>
+
       <!-- Image Section -->
-      <div class="col-lg-6 col-md-12 we_img text-center mt-4 mt-lg-0">
-        <img src="{% static 'images/white.jpg' %}" alt="Who We Are Image" />
+      <div class="col-lg-6 col-md-12 image-section">
+          <img src="{% static 'images/white.jpg' %}" alt="Law Firm Logo">
       </div>
-    </div>
   </div>
 </div>
 <hr />
@@ -178,6 +168,7 @@ CO.ADVOCATES{% endblock title %} {% block content %}
             <i class="fab fa-whatsapp"></i> Chat with Us on WhatsApp
           </a>
         </div>
+       
       </div>
 
       <!-- Google Map Embed -->
