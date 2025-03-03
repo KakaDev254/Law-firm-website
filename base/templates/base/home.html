@@ -1,141 +1,129 @@
 {% extends 'main.html'%} {% load static %} {% block title %}Home - G.M ORINA &
 CO.ADVOCATES{% endblock title %} {% block content %}
-
-<br>
-<div id="legalCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"
-     style="background-image: url('{% static "images/book.jpg" %}'); background-size: cover; background-position: center;">
-  
-  <div class="carousel-inner">
-
-    <!-- First Slide -->
-    <div class="carousel-item active">
-      <div class="overlay"></div> 
-      <div class="d-flex align-items-center justify-content-center text-white text-center slide-content" style="height: 80vh;">
-        <div class="container">
-          <h1 class="fade-in-text fs-1">Expert Legal Representation You Can Trust</h1>
-          <p class="fade-in-text">Call Now for Immediate Assistance</p>
-          <button type="button" class="custom-btn">Get in Touch</button>
+<section>
+  <!-- Bootstrap Carousel -->
+  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-caption">
+          <h2>Expert Legal Representation You Can Trust</h2>
+          <p>Call Now for Immediate Assistance.</p>
+          <button>Chat with Our Lawyer</button>
         </div>
       </div>
-    </div>
-
-    <!-- Second Slide -->
-    <div class="carousel-item">
-      <div class="overlay"></div> 
-      <div class="container d-flex align-items-center justify-content-center slide-content" style="height: 80vh;">
-        <div class="row w-100">
-          <div class="col-md-6 text-center text-md-start fade-in-image">
-            <img src="{% static 'images/white.jpg' %}" class="img-fluid rounded" alt="Law Firm">
-          </div>
-          <div class="col-md-6 d-flex align-items-center">
-            <div class="fade-in-text text-center text-md-start">
-              <p class="fs-4">We are committed to delivering outstanding legal services tailored to your needs.</p>
-              <p class="fs-5">Contact us today and let our experienced legal team assist you.</p>
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <!-- Overlay for Background Image -->
+        <div class="overlay"></div>
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <!-- Left Column: Text Content -->
+            <div
+              class="col-md-6 d-flex justify-content-center align-items-center"
+            >
+              <div class="text-center text-white p-4">
+                <p class="lead">
+                  G.M Orina & Co. Advocates is a Kenyan based law firm providing
+                  legal counsel and solutions to a wide range of clients in
+                  Kenya, Africa, and globally.
+                </p>
+              </div>
+            </div>
+            <!-- Right Column: Logo or Image -->
+            <div
+              class="col-md-6 d-flex justify-content-center align-items-center"
+            >
+              <img
+                src="{% static 'images/logo.png' %}"
+                alt="GM Orina & Co. Advocates Logo"
+                class="img-fluid rounded"
+              />
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    <!-- Carousel Controls -->
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExample"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExample"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
+</section>
 
-  <!-- Carousel Controls -->
-  <button class="carousel-control-prev custom-control" type="button" data-bs-target="#legalCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  </button>
-  <button class="carousel-control-next custom-control" type="button" data-bs-target="#legalCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  </button>
-</div>
-<section>
-<div class="container">
-  <div class="row why-container">
-      <!-- Text Section -->
-      <div class="col-lg-6 col-md-12 text-section">
-          <h2>Why Choose Us:</h2>
-          <p>
-              G.M Orina & Co. Advocates is a medium-sized law firm providing legal
-              counsel and solutions to a wide range of clients in Kenya, Africa, and globally.
+<section class="values">
+  <div class="container text-center">
+    <h2 class="section-title">OUR CORE VALUES</h2>
+
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="values-body">
+          <i class="fas fa-clock fa-3x"></i>
+          <h5 class="values-title">Effectiveness</h5>
+          <p class="values-text">
+            We recognize that our client's concerns are crucial. We are quick to
+            respond to their concerns and act upon them promptly.
           </p>
+        </div>
       </div>
 
-      <!-- Image Section -->
-      <div class="col-lg-6 col-md-12 image-section">
-          <img src="{% static 'images/logo.png' %}" alt="Law Firm Logo">
+      <div class="col-md-4">
+        <div class="values-body">
+          <i class="fas fa-chart-line fa-3x"></i>
+          <h5 class="values-title">Performance Excellence</h5>
+          <p class="values-text">
+            We are responsible professionals. We strive to meet and even exceed
+            Client expectations.
+          </p>
+        </div>
       </div>
+
+      <div class="col-md-4">
+        <div class="values-body">
+          <i class="fas fa-balance-scale fa-3x"></i>
+
+          <h5 class="values-title">Integrity</h5>
+          <p class="values-text">
+            We recognize that long-lasting and successful business relationships
+            are built on integrity, which is one of our core values
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </section>
 <hr />
-
-<div class="part3">
+<section class="parctice-container">
+  <div class="bg"></div>
+  <div class="areacontent"></div>
+</section>
+<section class="practice-section">
   <div class="container">
-    <h1 class="text-center mb-4">Our Practice Areas</h1>
-
-    <div id="practiceAreasCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        {% for area in practice_areas %}
-          {% if forloop.counter0|divisibleby:2 %}
-            <div class="carousel-item 2 {% if forloop.first %}active{% endif %}">
-              <div class="row justify-content-center">
-          {% endif %}
-
-          <div class="col-md-6">
-            <div class="card text-center p-3 shadow-sm">
-              <i class="{{ area.icon }} fa-3x mb-3"></i>
-              <div class="card-body">
-                <h5 class="card-title">{{ area.name }}</h5>
-                <p class="card-text">
-                  {{ practice_area.detailed_description|safe }}
-                </p>
-                <a href="{% url 'practice_area_detail' area.slug %}" class="card-link">
-                  Read more..
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {% if forloop.counter0|add:1|divisibleby:2 or forloop.last %}
-              </div>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#practiceAreasCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#practiceAreasCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-</div>
-
-<section class="container-blog">
-  <div class="container">
-    <h1>Articles</h1>
-    <div class="row gy-4">
-      <!-- Loop through blogs -->
-      {% for blog in blogs %}
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <div class="card">
-          <img
-            src="{% if blog.cover_image %}{{ blog.cover_image.url }}{% else %}{{ MEDIA_URL }}blog_covers/default_cover.jpg{% endif %}"
-            class="card-img-top"
-            alt="{{ blog.title }}"
-          />
-
+    <h2 class="text-center mb-5">Our Practice Areas</h2>
+    <div class="row">
+      {% for area in practice_areas %}
+      <div class="col-md-4">
+        <div class="card text-dark">
           <div class="card-body">
-            <a href="{% url 'blog_page' blog.id %}"><h5 class="card-title">{{ blog.title }}</h5> </a>
-
-            <small
-              >Published on: {{ blog.published_at}} By {{ blog.author }}</small
-            >
-            <br />
-          
+            <h5 class="card-title">{{ area.name }}</h5>
+            <p class="card-text">
+              {{ practice_area.detailed_description|safe }}
+            </p>
           </div>
         </div>
       </div>
@@ -143,67 +131,122 @@ CO.ADVOCATES{% endblock title %} {% block content %}
     </div>
   </div>
 </section>
+<div class="image-container1">
+  <div class="overlay1"></div>
+  <div class="parallex1">
+    <h1>We Help Solve Your Legal Issues</h1>
+    <p>Reach out to us today!</p>
+    <div class="contact-icons">
+      <i class="fas fa-phone fa-2x" style="color: rgb(36, 223, 61)"></i>
+      <i class="fas fa-envelope fa-2x" style="color: brown"></i>
 
-<section id="contact" class="part4">
-  <h1>Contact Us</h1>
-  <div class="container mt-5">
-    <div class="row align-items-center">
-      <!-- Contact Information -->
-      <div class="col-md-6 mb-4">
-        <h3>Contact Information</h3>
-        <p>
-          <strong>Address:</strong> G.M Orina & Co. Advocates <br />
-          Krishna Centre, 7th Floor, Suite 712 <br />
-          Woodvale Groove, Westlands <br />
-          P.O Box 33499-00600, Nairobi
-        </p>
-        <p>
-          <strong>Email:</strong>
-          <a href="mailto:gmorinaadvocates@gmail.com"
-            >gmorinaadvocates@gmail.com</a
-          >
-        </p>
-        <p>
-          <strong>Phone:</strong>
-          <a href="tel:+254712694826">+254712694826</a>
-        </p>
-
-        <h4>Office Hours</h4>
-        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-        <p>Saturday: 9:00 AM - 2:00 PM</p>
-        <p>Sunday: Closed</p>
-
-        <!-- WhatsApp Chat Button -->
-        <div class="whatsapp-chat">
-          <a
-            href="https://wa.me/254712694826"
-            target="_blank"
-            class="whatsapp-button"
-          >
-            <i class="fab fa-whatsapp"></i> Chat with Us on WhatsApp
-          </a>
+      <i class="fab fa-whatsapp fa-2x" style="color: rgb(56, 231, 56)"></i>
+    </div>
+  </div>
+</div>
+<section class="insights-container">
+  <h2 class="section-title">LATEST INSIGHTS</h2>
+  <div class="container">
+    <div class="row">
+      {% for blog in blogs %}
+      <div class="col-sm-12 col-md-3">
+        <div class="image-card">
+          <img
+            src="{% if blog.cover_image %}{{ blog.cover_image.url }}{% else %}{{ MEDIA_URL }}blog_covers/default_cover.jpg{% endif %}"
+            class="card-image"
+            alt="{{ blog.title }}"
+          />
+          <div class="overlay"></div>
+          <div class="card-body">
+            <p class="publish-info">
+              Published on:{{ blog.published_at}} <br />By: {{ blog.author }}
+            </p>
+            <a href="{% url 'blog_page' blog.id %}">
+              <p class="article-title">{{ blog.title }}</p>
+            </a>
+          </div>
         </div>
-       
       </div>
-
-      <!-- Google Map Embed -->
-      <div class="col-md-6 mb-4">
-        <h3>Find Us Here</h3>
-        <div class="embed-responsive">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3988.847273580759!2d36.80129707496572!3d-1.2641247987238449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwMTUnNTAuOSJTIDM2wrA0OCcxMy45IkU!5e0!3m2!1sen!2ske!4v1739821944158!5m2!1sen!2ske"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<div class="image-container2">
+  <div class="parallex2">
+    <h3>Don't Wait Any Longer</h3>
+    <h1>Contact Us Today!</h1>
+    <p><i class="fas fa-phone"></i> +254 712 694 826!</p>
+  </div>
+  <div class="overlay2"></div>
+</div>
+<section>
+  <div class="container-review">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="testimonial-section">
+          <div class="testimonial-content">
+            <div class="testimonial-text">
+              <h3>
+                <span class="line"></span> What our <br />
+                <strong>clients say.</strong>
+              </h3>
+              <p>
+                Here's what clients had to say regarding their <br />
+                experience with our Legal Services
+              </p>
+            </div>
+            <div class="testimonial-image">
+              <div class="elfsight-widget">
+                <script
+                  src="https://apps.elfsight.com/p/platform.js"
+                  defer
+                ></script>
+                <div
+                  class="elfsight-app-32de8ae5-f5ad-4dbb-893a-e04eccf15800"
+                  data-elfsight-app-lazy
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <h2>Talk To Us</h2>
+        <div class="container">
+          <div class="form-container">
+            <form action="#" method="post">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <textarea
+                  class="form-control"
+                  placeholder="Your message"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-submit w-100">
+                Get In Touch
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <hr />
 </section>
-
 {% endblock content %}
