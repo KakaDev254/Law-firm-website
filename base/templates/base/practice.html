@@ -1,31 +1,129 @@
-{% extends 'main.html'%} {% load static %} {% block title %} {{
+{% extends 'main.html' %} {% load static %} {% block title %} {{
 practice_area.name }} {% endblock title %} {% block content %}
 
-<div class="container my-5">
-  <div class="row">
-    <!-- Main Content Area -->
-    <div class="col-lg-8 col-md-7">
-      <div id="practice-content">
-        <h1 class="practice-title">Welcome to Our Practice Areas</h1>
-        <h3 class="lead">{{ practice_area.name }}.</h3>
-        <i class="fas {{ practice_area.icon }}"></i>
-        <p>{{ practice_area.detailed_description|safe }}</p>
-        <a href="{% url 'home' %}">Back to Home</a>
-      </div>
-    </div>
+<style>
+  .practice-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgb(20, 49, 116) !important;
+    margin-bottom: 20px;
+  }
 
-    <!-- Sidebar -->
-    <div class="col-lg-4 col-md-5">
-      <h3 class="sidebar-title">Our Legal Services</h3>
-      <ul class="list-group">
-        {% for area in practice_areas %}
-        <li>
-          <a href="{% url 'practice_area_detail' area.slug %}">
-            <i class="fas {{ area.icon }}"></i> {{ area.name }}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
+  .lead {
+    font-size: 1.5rem;
+    color: rgb(147, 69, 30) !important;
+  }
+
+  .practice-container .container {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #practice-content {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    border-left: 5px solid rgb(7, 78, 153);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .sidebar {
+    border-left: 3px solid #343a40;
+  }
+
+  .sidebar-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgb(10, 50, 91);
+    margin-bottom: 15px;
+  }
+
+  .list-group li {
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .list-group a {
+    text-decoration: none;
+    color: rgb(7, 48, 92) !important;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .list-group a:hover {
+    text-decoration: underline !important;
+  }
+  .practice-container button {
+    background: linear-gradient(
+      90deg,
+      rgba(8, 11, 90, 1) 4%,
+      rgba(4, 6, 54, 1) 20%,
+      rgba(110, 51, 7, 1) 43%,
+      rgba(2, 2, 78, 1) 54%,
+      rgba(5, 7, 73, 1) 78%
+    );
+    padding: 10px;
+    color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .practice-container button:hover {
+    background-color: rgba(5, 7, 73, 1);
+  }
+</style>
+<div class="practice-container py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Main Content Area -->
+      <div class="col-lg-8 col-md-7">
+        <div id="practice-content" class="p-4 shadow-sm rounded bg-white">
+          <h1 class="practice-title text-primary">
+            Welcome to Our Practice Areas
+          </h1>
+          <h3 class="lead">{{ practice_area.name }}</h3>
+
+          {% if practice_area.image %}
+          <img
+            src="{{ practice_area.image.url }}"
+            alt="{{ practice_area.name }}"
+            class="img-fluid rounded mb-3"
+          />
+          {% else %}
+          <img
+            src="/media/practice_areas/default.jpg"
+            alt="Default Image"
+            class="img-fluid rounded mb-3"
+          />
+          {% endif %}
+
+          <p class="text-muted">
+            {{ practice_area.detailed_description|safe }}
+          </p>
+
+          <a href="{% url 'home' %}"><button>Back to Home</button></a>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-lg-4 col-md-5">
+        <div class="sidebar p-4 shadow-sm rounded bg-light">
+          <h3 class="sidebar-title text-dark">Our Legal Services</h3>
+          <ul class="list-group">
+            {% for area in practice_areas %}
+            <li class="list-group-item">
+              <a
+                href="{% url 'practice_area_detail' area.slug %}"
+                class="text-decoration-none text-dark"
+              >
+                {{ area.name }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>

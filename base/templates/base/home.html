@@ -214,34 +214,59 @@ CO.ADVOCATES{% endblock title %} {% block content %}
         <h2>Talk To Us</h2>
         <div class="container">
           <div class="form-container">
-            <form action="#" method="post">
+            <form method="POST" action="">
+              {% csrf_token %}
+
               <div class="mb-3">
                 <input
                   type="text"
                   class="form-control"
+                  name="name"
                   placeholder="Your name"
+                  value="{{ form.name.value|default:'' }}"
                   required
                 />
+                {% if form.name.errors %}
+                <div class="text-danger">{{ form.name.errors.0 }}</div>
+                {% endif %}
               </div>
+
               <div class="mb-3">
                 <input
                   type="email"
                   class="form-control"
+                  name="email"
                   placeholder="Your email"
+                  value="{{ form.email.value|default:'' }}"
                   required
                 />
+                {% if form.email.errors %}
+                <div class="text-danger">{{ form.email.errors.0 }}</div>
+                {% endif %}
               </div>
+
               <div class="mb-3">
                 <textarea
                   class="form-control"
+                  name="message"
                   placeholder="Your message"
                   rows="4"
                   required
-                ></textarea>
+                >
+{{ form.message.value|default:'' }}</textarea
+                >
+                {% if form.message.errors %}
+                <div class="text-danger">{{ form.message.errors.0 }}</div>
+                {% endif %}
               </div>
+
               <button type="submit" class="btn btn-submit w-100">
                 Get In Touch
               </button>
+
+              {% if success_message %}
+              <div class="alert alert-success mt-3">{{ success_message }}</div>
+              {% endif %}
             </form>
           </div>
         </div>

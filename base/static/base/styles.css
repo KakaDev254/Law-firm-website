@@ -47,7 +47,8 @@ body {
   background-color: #d7cecb;
 }
 .navbar-toggler {
-  border-color: rgb(173, 158, 158); /* Change the border color */
+  border-color: rgb(173, 158, 158); 
+  margin-left: auto;
 }
 
 .navbar-toggler-icon {
@@ -85,6 +86,12 @@ body {
   to {
     width: 100%;
   }
+}
+@media (max-width: 768px)  {
+  .navbar-brand img{
+    margin-left: 0;
+  }
+  
 }
 
 /* Button Styles */
@@ -202,8 +209,13 @@ body {
 .image-container2 {
   background-image: url("../images/west2.png");
 }
+.image-container3 {
+  background-image: url("../images/real.jpg");
+}
+
 .parallex1,
-.parallex2 {
+.parallex2 ,
+.parallex3{
   position: absolute;
   color: white;
 
@@ -346,14 +358,21 @@ body {
   margin: 8px auto 0;
 }
 .practice-section .card {
-  background-color: #073870;
+  background: linear-gradient(
+    90deg,
+    rgba(8, 11, 90, 1) 4%,
+    rgba(4, 6, 54, 1) 20%,
+    rgba(110, 51, 7, 1) 43%,
+    rgba(2, 2, 78, 1) 54%,
+    rgba(5, 7, 73, 1) 78%
+  );
   color: #dde3ea;
   border-color: #d9d7e4;
   transition: transform 0.3s ease-in-out;
   margin-bottom: 2rem;
 }
 .practice-section .card:hover {
-  background-color: #06294e;
+  background-color: #080458;
   transform: scale(1.05);
 }
 .practice-section .card h5 {
@@ -416,6 +435,7 @@ body {
   align-self: flex-start;
   font-weight: bold;
   font-size: 14px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .article-title {
@@ -427,7 +447,7 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
+  color: rgb(199, 187, 187);
 }
 @media (max-width: 768px) {
   .image-card {
@@ -637,6 +657,8 @@ a {
 @media (max-width: 768px) {
   .map-container {
     height: 250px;
+    width:70vw;
+    margin:auto;
   }
 }
 
@@ -645,3 +667,4 @@ a {
     height: 150px;
   }
 }
+/

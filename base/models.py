@@ -25,7 +25,8 @@ class Comment(models.Model):
 
 class PracticeArea(models.Model):
     name = models.CharField(max_length=100, verbose_name="Area of Practice")
-    icon = models.CharField(max_length=50, help_text="Font Awesome icon class, e.g., 'fa-scale-balanced'")
+    image = models.ImageField(upload_to="practice_areas/", help_text="Upload an image representing the practice area",null=True, blank=True)
+
     detailed_description = HTMLField(verbose_name="Detailed Description")
     slug = models.SlugField(unique=True, help_text="URL-friendly name for the practice area")
 
