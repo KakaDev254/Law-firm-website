@@ -68,7 +68,7 @@ body {
   border-radius: 10px;
 }
 .carousel-item:nth-child(1) {
-  background-image: url("../images/blue4.jpg");
+  background-image: url("../images/home2.webp");
 }
 .carousel-item.active .carousel-caption {
   bottom: 10vh;
@@ -78,29 +78,13 @@ body {
 .carousel-item.active .carousel-caption h2 {
   color: #d9d7e4;
   font-weight: 800;
-  position: relative;
+  
   text-transform: uppercase;
-  -webkit-text-stroke: 0.3vw #1E566C;
+  
   
 }
-.carousel-item.active .carousel-caption h2::before{
-  position: absolute;
-  top: 0;
-  left:0;
-  color: #d9d7e4;
-  -webkit-text-stroke: 0vw #1E566C;
-  border-right: 2px solid rgb(181, 181, 195);
-  overflow: hidden;
-  animation:  text-ani 6s linear infinite;
-}
-@keyframes text-ani {
-  0%{
-    width: 0;
-  }
-  70% {
-    width: 100%;
-  }
-}
+
+
 @media (max-width: 768px)  {
   .navbar-brand img{
     margin-left: 0;
@@ -120,7 +104,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.carousel-item.active .overlay {
+/* .carousel-item.active .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -128,7 +112,7 @@ body {
   height: 100%;
   background: #1E566C;
   opacity: .7;
-}
+} */
 
 
 .carousel-item.active .carousel-caption button:hover {
@@ -143,7 +127,7 @@ body {
   background-image: url("../images/blue 3.jpg");
 }
 
-.carousel-item:nth-child(2) .overlay {
+/* .carousel-item:nth-child(2) .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -151,7 +135,7 @@ body {
   height: 100%;
   background: #1E566C;
   opacity: .7;
-}
+} */
 
 /* Ensure text and image are above the overlay */
 .carousel-item:nth-child(2) .container {
