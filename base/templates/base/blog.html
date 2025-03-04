@@ -1,87 +1,147 @@
 {% extends 'main.html' %} {% load static %} {% block content %}
+<style>
+  .blog-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+  }
 
-<div class="container mt-4">
+  .blog-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .img-fluid {
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  .comments-section {
+    border-left: 4px solid #507687;
+  }
+
+  .comment-form input,
+  .comment-form textarea {
+    border-radius: 5px;
+  }
+
+  .custom-btn {
+    background-color: #507687;
+    border-color: #507687;
+    color: white;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .custom-btn:hover {
+    background-color: #405a6f;
+  }
+
+  .sidebar {
+    background: #fff;
+    border-radius: 8px;
+  }
+
+  .list-group-item a {
+    transition: color 0.3s ease;
+  }
+
+  .list-group-item a:hover {
+    color: #507687;
+  }
+</style>
+<div class="container mt-5">
   <div class="row">
     <!-- Blog Main Content (3/4 Width) -->
-    <div class="col-md-8">
-      <h1 class="mb-3">{{ active_blog.title }}</h1>
-      <p class="text-muted">
-        By {{ active_blog.author }} | {{ active_blog.published_at}}
-      </p>
+    <div class="col-lg-8">
+      <div class="blog-content p-4 rounded shadow-sm bg-white">
+        <h1 class="mb-3 text-primary">{{ active_blog.title }}</h1>
+        <p class="text-muted small">
+          <i class="fas fa-user"></i> By {{ active_blog.author }} |
+          <i class="fas fa-calendar-alt"></i> {{ active_blog.published_at }}
+        </p>
 
-      {% if active_blog.cover_image %}
-      <img
-        src="{{ active_blog.cover_image.url }}"
-        alt="Cover Image"
-        class="img-fluid mb-3"
-      />
-      {% else %}
-      <img
-        src="{{ MEDIA_URL }}blog_covers/default_cover.jpg"
-        alt="Default Cover Image"
-        class="img-fluid mb-3"
-      />
-      {% endif %}
+        {% if active_blog.cover_image %}
+        <img
+          src="{{ active_blog.cover_image.url }}"
+          alt="Cover Image"
+          class="img-fluid rounded mb-3 shadow-sm"
+        />
+        {% else %}
+        <img
+          src="{{ MEDIA_URL }}blog_covers/default_cover.jpg"
+          alt="Default Cover Image"
+          class="img-fluid rounded mb-3 shadow-sm"
+        />
+        {% endif %}
 
-      <p>{{ active_blog.content|safe }}</p>
+        <div class="blog-text">
+          <p class="lead">{{ active_blog.content|safe }}</p>
+        </div>
+      </div>
 
       <!-- Comments Section -->
-      <h2 class="mt-4">Comments</h2>
-      <ul class="list-group mb-3">
-        {% for comment in active_blog.comments.all %}
-        <li class="list-group-item">
-          <strong>{{ comment.name }}</strong>: {{ comment.text }}
-        </li>
-        {% empty %}
-        <li class="list-group-item">
-          No comments yet. Be the first to comment!
-        </li>
-        {% endfor %}
-      </ul>
+      <div class="comments-section mt-5 p-4 rounded bg-light shadow-sm">
+        <h2 class="mb-3">Comments</h2>
+        <ul class="list-group mb-3">
+          {% for comment in active_blog.comments.all %}
+          <li class="list-group-item">
+            <strong class="text-primary">{{ comment.name }}</strong>: {{
+            comment.text }}
+          </li>
+          {% empty %}
+          <li class="list-group-item text-muted">
+            No comments yet. Be the first to comment!
+          </li>
+          {% endfor %}
+        </ul>
 
-      <!-- Comment Form -->
-      <h3 class="mt-4">Leave a Comment</h3>
-      <form method="POST" class="mb-3">
-        {% csrf_token %}
-        <div class="mb-3">
-          <input
-            type="text"
-            name="name"
-            class="form-control"
-            placeholder="Your Name"
-            required
-          />
-        </div>
-        <div class="mb-3">
-          <textarea
-            name="text"
-            class="form-control"
-            placeholder="Write your comment here..."
-            required
-          ></textarea>
-        </div>
-        <button
-          type="submit"
-          class="btn btn-primary"
-          style="background-color: #507687; border-color: #507687; color: white"
-        >
-          Post Comment
-        </button>
-      </form>
+        <!-- Comment Form -->
+        <h3 class="mt-4">Leave a Comment</h3>
+        <form method="POST" class="comment-form mt-3">
+          {% csrf_token %}
+          <div class="mb-3">
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              name="text"
+              class="form-control"
+              placeholder="Write your comment here..."
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary custom-btn">
+            Post Comment
+          </button>
+        </form>
+      </div>
     </div>
 
     <!-- Sidebar (1/4 Width) -->
-    <div class="col-md-4">
-      <h3>Other Articles</h3>
-      <ul class="list-group">
-        {% for blog in blogs %} {% if blog.id != active_blog.id %}
-        <li class="list-group-item">
-          <a href="{% url 'blog_page' blog.id %}" class="text-decoration-none"
-            >{{ blog.title }}</a
-          >
-        </li>
-        {% endif %} {% endfor %}
-      </ul>
+    <div class="col-lg-4">
+      <div class="sidebar p-4 rounded bg-white shadow-sm">
+        <h3 class="mb-3">Other Articles</h3>
+        <ul class="list-group">
+          {% for blog in blogs %} {% if blog.id != active_blog.id %}
+          <li class="list-group-item">
+            <a
+              href="{% url 'blog_page' blog.id %}"
+              class="text-decoration-none text-dark"
+            >
+              {{ blog.title }}
+            </a>
+          </li>
+          {% endif %} {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.core.mail import send_mail
-from .models import Blog, Comment, PracticeArea, TeamMember, Job
+from .models import Blog, Comment, PracticeArea, TeamMember, Job, Comment
 from .forms import CommentForm, ContactForm
 
 
@@ -61,8 +61,11 @@ def team_page(request):
 def blog(request, blog_id=None):
     blogs = Blog.objects.order_by('-published_at')  # List blogs, latest first
     active_blog = blogs.first() if not blog_id else get_object_or_404(Blog, id=blog_id)
-    practice_areas = PracticeArea.objects.all
+    practice_areas = PracticeArea.objects.all()  # ✅ Add parentheses to `.all()`
     
+    # ✅ Fetch comments for the active blog
+    comments = active_blog.comments.all()
+
     if request.method == "POST":
         name = request.POST.get("name")
         text = request.POST.get("text")
@@ -72,10 +75,11 @@ def blog(request, blog_id=None):
 
     return render(request, "base/blog.html", {
         "active_blog": active_blog,
-        "blogs": blogs, 'MEDIA_URL': settings.MEDIA_URL,
-        'practice_areas': practice_areas,
+        "blogs": blogs,
+        "comments": comments,  # ✅ Pass comments to the template
+        "MEDIA_URL": settings.MEDIA_URL,
+        "practice_areas": practice_areas,
     })
-
 
 def practice_area_detail(request, slug):
     practice_area = get_object_or_404(PracticeArea, slug=slug)
