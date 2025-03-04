@@ -8,14 +8,7 @@ body {
 }
 /* Navbar */
 .navbar {
-  background: linear-gradient(
-    90deg,
-    rgba(8, 11, 90, 1) 4%,
-    rgba(4, 6, 54, 1) 20%,
-    rgba(110, 51, 7, 1) 43%,
-    rgba(2, 2, 78, 1) 54%,
-    rgba(5, 7, 73, 1) 78%
-  );
+  background: #1E566C;
 }
 .navbar-brand img {
   height: 60px;
@@ -36,7 +29,7 @@ body {
 }
 
 .dropdown-menu {
-  background-color: #110952;
+  background-color: #5D8AA8;
 }
 
 .dropdown-item {
@@ -52,7 +45,7 @@ body {
 }
 
 .navbar-toggler-icon {
-  background-color: rgb(206, 98, 20); /* Change icon color */
+  background-color: white; 
 }
 @media (max-width:768px){
   .navbar-brand img{
@@ -85,13 +78,26 @@ body {
 .carousel-item.active .carousel-caption h2 {
   color: #d9d7e4;
   font-weight: 800;
-  animation: unfold 2s ease-out forwards;
+  position: relative;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.3vw #1E566C;
+  
 }
-@keyframes unfold {
-  from {
+.carousel-item.active .carousel-caption h2::before{
+  position: absolute;
+  top: 0;
+  left:0;
+  color: #d9d7e4;
+  -webkit-text-stroke: 0vw #1E566C;
+  border-right: 2px solid rgb(181, 181, 195);
+  overflow: hidden;
+  animation:  text-ani 6s linear infinite;
+}
+@keyframes text-ani {
+  0%{
     width: 0;
   }
-  to {
+  70% {
     width: 100%;
   }
 }
@@ -104,7 +110,7 @@ body {
 
 /* Button Styles */
 .carousel-item.active .carousel-caption button {
-  background-color: #06294e;
+  background-color: #1E566C;
   color: #fff;
   border: none;
   font-weight: 500;
@@ -114,6 +120,16 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+.carousel-item.active .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1E566C;
+  opacity: .7;
+}
+
 
 .carousel-item.active .carousel-caption button:hover {
   background-color: #dde3ea;
@@ -121,17 +137,20 @@ body {
   color: black;
 }
 
+
 /* Slide 2 Background and Overlay */
 .carousel-item:nth-child(2) {
   background-image: url("../images/blue 3.jpg");
 }
+
 .carousel-item:nth-child(2) .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(45, 20, 236, 0.5);
+  background: #1E566C;
+  opacity: .7;
 }
 
 /* Ensure text and image are above the overlay */
@@ -276,7 +295,8 @@ body {
   left: 0;
   width: 100vw;
   height: 100%;
-  background: rgba(64, 76, 238, 0.5);
+  background: #1E566C;
+  opacity: .7;
   transition: 0.3s ease-in-out;
 }
 @media (max-width: 768px) {
@@ -317,11 +337,11 @@ body {
 .values i {
   font-size: 40px;
   padding-bottom: 0.5rem;
-  color: #06294e;
+  color: #1E566C;
 }
 .section-title {
   padding-top: 2.5rem;
-  color: #06294e;
+  color: #1E566C;
   font-weight: bolder;
 }
 .section-title::after {
@@ -341,14 +361,7 @@ body {
 
 /* Practice areas styling */
 .practice-section {
-  background: linear-gradient(
-    90deg,
-    rgba(8, 11, 90, 1) 4%,
-    rgba(4, 6, 54, 1) 20%,
-    rgba(110, 51, 7, 1) 43%,
-    rgba(2, 2, 78, 1) 54%,
-    rgba(5, 7, 73, 1) 78%
-  );
+  background: #1E566C;
   color: white;
   padding: 60px 0;
   width: 90vw;
@@ -365,26 +378,19 @@ body {
   margin: 8px auto 0;
 }
 .practice-section .card {
-  background: linear-gradient(
-    90deg,
-    rgba(8, 11, 90, 1) 4%,
-    rgba(4, 6, 54, 1) 20%,
-    rgba(110, 51, 7, 1) 43%,
-    rgba(2, 2, 78, 1) 54%,
-    rgba(5, 7, 73, 1) 78%
-  );
+  background: #1E566C;
   color: #dde3ea;
   border-color: #d9d7e4;
   transition: transform 0.3s ease-in-out;
   margin-bottom: 2rem;
 }
 .practice-section .card:hover {
-  background-color: #080458;
+  background-color: #367589;
   transform: scale(1.05);
 }
 .practice-section .card h5 {
   text-align: center;
-  color: #be4b11;
+  color: #c7ced7;
 }
 .practice-section .card p {
   color: #d9d7e4;
@@ -498,7 +504,7 @@ a {
 
 .testimonial-text h3 {
   font-size: 26px;
-  color: #003366;
+  color: #1E566C;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -507,13 +513,13 @@ a {
   display: inline-block;
   width: 40px;
   height: 3px;
-  background: #003366;
+  background: #1E566C;
   margin-bottom: 10px;
 }
 
 .testimonial-text p {
   font-size: 16px;
-  color: #003366;
+  color: #367589;
   font-weight: 600;
   margin-bottom: 20px;
 }
@@ -555,28 +561,21 @@ a {
 }
 
 .form-control:focus {
-  border-color: #007bff;
+  border-color: #367589;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
   outline: none;
 }
 .container-review h2 {
   margin: 1rem 2rem;
   font-size: 26px;
-  color: #003366;
+  color: #1E566C;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 /* === Button Styling === */
 .btn-submit {
-  background: linear-gradient(
-    90deg,
-    rgba(8, 11, 90, 1) 4%,
-    rgba(4, 6, 54, 1) 20%,
-    rgba(110, 51, 7, 1) 43%,
-    rgba(2, 2, 78, 1) 54%,
-    rgba(5, 7, 73, 1) 78%
-  );
+  background: #1E566C;
   color: white;
   border: none;
   padding: 12px;
@@ -607,14 +606,7 @@ a {
 /* Footer styling */
 .footer {
   position: relative;
-  background: linear-gradient(
-    90deg,
-    rgba(8, 11, 90, 1) 4%,
-    rgba(4, 6, 54, 1) 20%,
-    rgba(110, 51, 7, 1) 43%,
-    rgba(2, 2, 78, 1) 54%,
-    rgba(5, 7, 73, 1) 78%
-  );
+  background: #1E566C;
   color: white;
 }
 
