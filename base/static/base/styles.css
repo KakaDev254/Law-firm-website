@@ -54,6 +54,14 @@ body {
 .navbar-toggler-icon {
   background-color: rgb(206, 98, 20); /* Change icon color */
 }
+@media (max-width:768px){
+  .navbar-brand img{
+    margin: 0;
+  }
+  .navbar-brand span {
+    font-size: 24px;
+  }
+}
 /* Top carousel styling */
 
 .carousel-item {
@@ -328,8 +336,7 @@ body {
   color: #be4b11;
 }
 .values-text {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
 }
 
 /* Practice areas styling */
@@ -407,6 +414,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  transition: opacity 0.5s ease-in-out;
   z-index: -1;
 }
 .insights-container .overlay {
@@ -452,7 +460,7 @@ a {
 @media (max-width: 768px) {
   .image-card {
     height: 240px;
-    width: 70vw;
+    width: 85vw;
     text-align: center;
     margin: 1rem auto;
   }

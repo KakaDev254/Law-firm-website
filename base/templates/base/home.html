@@ -253,7 +253,7 @@ CO.ADVOCATES{% endblock title %} {% block content %}
                   rows="4"
                   required
                 >
-{{ form.message.value|default:'' }}</textarea
+                {{ form.message.value|default:'' }}</textarea
                 >
                 {% if form.message.errors %}
                 <div class="text-danger">{{ form.message.errors.0 }}</div>
