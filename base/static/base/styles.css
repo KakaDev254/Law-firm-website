@@ -104,7 +104,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.carousel-item.active .overlay {
+/* .carousel-item.active .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -112,7 +112,7 @@ body {
   height: 100%;
   background: #eec45b;
   opacity: .7;
-}
+} */
 
 
 .carousel-item.active .carousel-caption button:hover {
