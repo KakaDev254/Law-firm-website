@@ -15,9 +15,10 @@ class Blog(models.Model):
 
 class Comment(models.Model):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name="comments")
-    name = models.CharField(max_length=100)  # Name of the commenter
+    name = models.CharField(max_length=100)
     text = models.TextField()
-    created_at = models.DateTimeField(default=timezone.now)
+    created_at = models.DateTimeField(auto_now_add=True)
+    admin_response = models.TextField(blank=True, null=True)  # ✅ New Field
 
     def __str__(self):
         return f"Comment by {self.name} on {self.blog.title}"

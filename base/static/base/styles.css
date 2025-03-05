@@ -104,15 +104,15 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-/* .carousel-item.active .overlay {
+.carousel-item.active .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #1E566C;
+  background: #eec45b;
   opacity: .7;
-} */
+}
 
 
 .carousel-item.active .carousel-caption button:hover {

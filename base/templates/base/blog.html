@@ -84,10 +84,19 @@
       <div class="comments-section mt-5 p-4 rounded bg-light shadow-sm">
         <h2 class="mb-3">Comments</h2>
         <ul class="list-group mb-3">
-          {% for comment in active_blog.comments.all %}
+          {% for comment in comments %}
           <li class="list-group-item">
-            <strong class="text-primary">{{ comment.name }}</strong>: {{
-            comment.text }}
+            <strong class="text-primary">{{ comment.name }}</strong>:
+            <span class="text-dark">{{ comment.text }}</span>
+            <br />
+            <small class="text-muted">{{ comment.created_at }}</small>
+
+            {% if comment.admin_response %}
+            <div class="admin-response mt-2 p-2 bg-white border rounded">
+              <strong class="text-danger">Admin:</strong>
+              <span class="text-dark">{{ comment.admin_response }}</span>
+            </div>
+            {% endif %}
           </li>
           {% empty %}
           <li class="list-group-item text-muted">
@@ -99,25 +108,7 @@
         <!-- Comment Form -->
         <h3 class="mt-4">Leave a Comment</h3>
         <form method="POST" class="comment-form mt-3">
-          {% csrf_token %}
-          <div class="mb-3">
-            <input
-              type="text"
-              name="name"
-              class="form-control"
-              placeholder="Your Name"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <textarea
-              name="text"
-              class="form-control"
-              placeholder="Write your comment here..."
-              rows="4"
-              required
-            ></textarea>
-          </div>
+          {% csrf_token %} {{ form.as_p }}
           <button type="submit" class="btn btn-primary custom-btn">
             Post Comment
           </button>

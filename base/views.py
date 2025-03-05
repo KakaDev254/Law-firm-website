@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.core.mail import send_mail
-from .models import Blog, Comment, PracticeArea, TeamMember, Job, Comment
+from .models import Blog, Comment, PracticeArea, TeamMember, Job
 from .forms import CommentForm, ContactForm
 
 
@@ -59,26 +59,26 @@ def team_page(request):
     
 
 def blog(request, blog_id=None):
-    blogs = Blog.objects.order_by('-published_at')  # List blogs, latest first
+    practice_areas = PracticeArea.objects.all
+    blogs = Blog.objects.order_by('-published_at')
     active_blog = blogs.first() if not blog_id else get_object_or_404(Blog, id=blog_id)
-    practice_areas = PracticeArea.objects.all()  # ✅ Add parentheses to `.all()`
-    
-    # ✅ Fetch comments for the active blog
     comments = active_blog.comments.all()
 
     if request.method == "POST":
-        name = request.POST.get("name")
-        text = request.POST.get("text")
-        if name and text:
-            Comment.objects.create(blog=active_blog, name=name, text=text)
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.blog = active_blog
+            comment.save()
             return redirect('blog_page', blog_id=active_blog.id)
+    else:
+        form = CommentForm()
 
     return render(request, "base/blog.html", {
         "active_blog": active_blog,
-        "blogs": blogs,
-        "comments": comments,  # ✅ Pass comments to the template
-        "MEDIA_URL": settings.MEDIA_URL,
-        "practice_areas": practice_areas,
+        "blogs": blogs,'practice_areas': practice_areas,
+        "comments": comments,  # ✅ Pass comments (with admin responses)
+        "form": form,
     })
 
 def practice_area_detail(request, slug):
