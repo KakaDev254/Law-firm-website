@@ -146,8 +146,9 @@ body {
   color: #fff;
 }
 .carousel-item:nth-child(2) p {
-  font-size: 24px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 22px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .carousel-item:nth-child(2) img {
@@ -247,7 +248,7 @@ body {
   }
 
   .carousel-item:nth-child(2) p {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .carousel-item:nth-child(2) img {
@@ -257,7 +258,7 @@ body {
 
 /* legal section */
 .legal {
-  height: 70vh;
+  height: 60vh;
   margin: 50px 30px;
 
   display: flex;
@@ -271,17 +272,23 @@ body {
 
 .legal-text h2 {
   font-size: 2.5rem;
+  font-weight: 700;
   color: #02042f;
 }
 
 .legal-text p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #02042f;
+  max-width: 90%;
+  word-wrap: break-word;
+  line-height: 1.6;
+  margin: 0 auto;
 }
 
 .legal-text hr {
   border: 2px solidrgb(5, 33, 63);
   width: 50px;
+  height: 3px;
   margin: 20px 0;
 }
 
@@ -290,16 +297,20 @@ body {
   padding-right: 6%;
   transform: translateX(-100%);
   opacity: 0;
-  animation: slideInLeft 1s forwards;
+  animation: slideInLeft 1s ease-out forwards;
 }
 
 .right-column {
   transform: translateX(100%);
   opacity: 0;
-  animation: slideInRight 1s forwards;
+  animation: slideInRight 1s ease-out forwards;
 }
 
 @keyframes slideInLeft {
+  from {
+    transform: translateX(-200px); /* Start farther to the left */
+    opacity: 0;
+  }
   to {
     transform: translateX(0);
     opacity: 1;
@@ -307,6 +318,10 @@ body {
 }
 
 @keyframes slideInRight {
+  from {
+    transform: translateX(200px); /* Start farther to the right */
+    opacity: 0;
+  }
   to {
     transform: translateX(0);
     opacity: 1;
