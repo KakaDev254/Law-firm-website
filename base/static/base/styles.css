@@ -61,7 +61,7 @@ body {
 /* Top carousel styling */
 
 .carousel-item {
-  height: 100vh; /* Adjust for different screens via media queries */
+  height: 75vh; /* Adjust for different screens via media queries */
   background-size: cover;
   background-position: center;
 }
@@ -74,7 +74,11 @@ body {
   background-image: url("../images/blue4.jpg");
 
 }
-
+.carousel-item.active .carousel-caption {
+  bottom: 10vh;
+  transform: translateY(-50%);
+  text-align: center;
+}
 .carousel-item.active .carousel-caption h2 {
   color: #d9d7e4;
   font-weight: 800;
@@ -261,23 +265,28 @@ body {
 }
 
 /* legal section */
-
-.legal-section {
-  margin: 50px 0; /* Add margin to the section */
+.legal{
+  margin: 50px 0;
 }
+.legal img{
+  filter: brightness(50%) contrast(120%) saturate(150%);
+}
+
 
 .legal-text h2 {
   font-size: 2.5rem;
-  color: #333;
+  color:  #02042f;
+  
 }
 
 .legal-text p {
   font-size: 1.2rem;
-  color: #666;
+  color: #02042f;
+  ;
 }
 
 .legal-text hr {
-  border: 2px solid #007bff;
+  border: 2px solidrgb(5, 33, 63);
   width: 50px;
   margin: 20px 0;
 }
@@ -387,7 +396,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100%;
-  background: rgba(223, 155, 37, 0.5);
+  background: rgba(238, 176, 69, 0.5);
   transition: 0.3s ease-in-out;
 }
 .overlay2 {
@@ -396,7 +405,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100%;
-  background: #1E566C;
+  background: #020948;
   opacity: .7;
   transition: 0.3s ease-in-out;
 }
