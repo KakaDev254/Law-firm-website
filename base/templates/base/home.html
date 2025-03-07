@@ -53,45 +53,39 @@ CO.ADVOCATES{% endblock title %} {% block content %}
         <div class="overlay"></div>
         <div class="container h-100">
           <div class="row h-100 align-items-center">
-            <!-- Left Column: Text Content -->
-            <div
-            class="col-md-6 d-flex justify-content-center align-items-center"
-          >
-            <img
-              src="{% static 'images/core.jpg' %}"
-              alt="Core Values"
-              class="img-fluid rounded"
-            />
-          </div>
-          <!-- Right Column: Logo or Image -->
-            <div
-              class="col-md-6 d-flex justify-content-center align-items-center"
-            >
-              <div class="text-center text-white p-4">
+            <!-- Left Column: Image (Hidden on small screens) -->
+            <div class="col-md-6 d-none d-md-flex justify-content-center align-items-center">
+              <img src="{% static 'images/core.jpg' %}" alt="Core Values" class="img-fluid rounded" />
+            </div>
+            <!-- Right Column: Text Content -->
+            <div class="col-md-6 d-flex flex-column align-items-start text-start text-white p-4">
+              <div class="mb-3">
                 <i class="fas fa-clock fa-2x"></i>
                 <h3>Effectiveness</h3>
                 <p class="lead">
                   We recognize that our client's concerns are crucial. We are quick to respond to their concerns and act upon them promptly.
                 </p>
+              </div>
+              <div class="mb-3">
                 <i class="fas fa-chart-line fa-2x"></i>
                 <h3>Performance Excellence</h3>
-
                 <p class="lead">
                   We are responsible professionals. We strive to meet and even exceed Client expectations.
                 </p>
-                <i class="fas fa-balance-scale fa-2x  "></i>
+              </div>
+              <div>
+                <i class="fas fa-balance-scale fa-2x"></i>
                 <h3>Integrity</h3>
-
                 <p class="lead">
                   We recognize that long-lasting and successful business relationships are built on integrity, which is one of our core values.
                 </p>
               </div>
             </div>
-            
-            
           </div>
         </div>
       </div>
+      
+      
     </div>
     <!-- Carousel Controls -->
     <button
@@ -115,7 +109,28 @@ CO.ADVOCATES{% endblock title %} {% block content %}
   </div>
 </section>
 
-
+<section>
+  <div class="container legal-section">
+    <div class="row align-items-center">
+        <!-- Left Column: Image -->
+        <div class="col-md-6 left-column">
+            <img src="{% static 'images/core.jpg' %}" alt="Legal Partner" class="img-fluid rounded shadow">
+        </div>
+        
+        <!-- Right Column: Text -->
+        <div class="col-md-6 right-column">
+            <div class="legal-text">
+                <h2>Your trusted Legal Partner</h2>
+                <hr>
+                <p>
+                    G.M Orina & Co. Advocates is a medium-sized law firm providing legal counsel and solutions
+                    to a wide range of clients in Kenya, Africa, and globally.
+                </p>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
 
 
 

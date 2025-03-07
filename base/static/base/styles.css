@@ -61,7 +61,7 @@ body {
 /* Top carousel styling */
 
 .carousel-item {
-  height: 60vh; /* Adjust for different screens via media queries */
+  height: 100vh; /* Adjust for different screens via media queries */
   background-size: cover;
   background-position: center;
 }
@@ -74,11 +74,7 @@ body {
   background-image: url("../images/blue4.jpg");
 
 }
-.carousel-item.active .carousel-caption {
-  bottom: 10vh;
-  transform: translateY(-50%);
-  text-align: center;
-}
+
 .carousel-item.active .carousel-caption h2 {
   color: #d9d7e4;
   font-weight: 800;
@@ -187,7 +183,9 @@ body {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  background: #02042f;
+  
+  filter: brightness(50%) contrast(120%) saturate(150%);
+  
 }
 
 /* Right Column Text & Icons */
@@ -259,6 +257,64 @@ body {
 
   .carousel-item:nth-child(2) img {
     height: 35vh;
+  }
+}
+
+/* legal section */
+
+.legal-section {
+  margin: 50px 0; /* Add margin to the section */
+}
+
+.legal-text h2 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.legal-text p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.legal-text hr {
+  border: 2px solid #007bff;
+  width: 50px;
+  margin: 20px 0;
+}
+
+/* Animation for columns */
+.left-column {
+  transform: translateX(-100%);
+  opacity: 0;
+  animation: slideInLeft 1s forwards;
+}
+
+.right-column {
+  transform: translateX(100%);
+  opacity: 0;
+  animation: slideInRight 1s forwards;
+}
+
+@keyframes slideInLeft {
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .left-column, .right-column {
+      transform: translateX(0);
+      opacity: 1;
+      animation: none; /* Disable animation on smaller screens */
   }
 }
 /* bg1 */
