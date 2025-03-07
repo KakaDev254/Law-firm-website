@@ -3,12 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Lato", sans-serif;
 }
 /* Navbar */
 .navbar {
-  background: #1E566C;
+  background: #02042f;
 }
 .navbar-brand img {
   height: 60px;
@@ -68,7 +71,8 @@ body {
   border-radius: 10px;
 }
 .carousel-item:nth-child(1) {
-  background-image: url("../images/home2.webp");
+  background-image: url("../images/blue4.jpg");
+
 }
 .carousel-item.active .carousel-caption {
   bottom: 10vh;
@@ -126,6 +130,10 @@ body {
 .carousel-item:nth-child(2) {
   background-image: url("../images/blue 3.jpg");
 }
+.carousel-item:nth-child(3) {
+  background-image: url("../images/blue6.jpg");
+  
+}
 
 /* .carousel-item:nth-child(2) .overlay {
   position: absolute;
@@ -159,6 +167,59 @@ body {
   transform: scale(1.05);
 }
 
+.carousel-item:nth-child(3) .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+}
+
+/* Ensures content appears above the overlay */
+.carousel-item:nth-child(3) .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Image Styling */
+.carousel-item:nth-child(3) img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: #02042f;
+}
+
+/* Right Column Text & Icons */
+.carousel-item:nth-child(3) .text-container {
+  color: white;
+  text-align: start;
+  padding: 20px;
+}
+.carousel-item:nth-child(3) h3 {
+  font-size: 24px;
+}
+.carousel-item:nth-child(3) .lead {
+  color: white;
+  font-size: 16px;
+}
+
+/* Align icons and text */
+.carousel-item:nth-child(3) .icon-text {
+  display: flex;
+  align-items: center; /* Aligns icon and text */
+  gap: 10px; /* Spacing between icon and text */
+  margin-bottom: 20px; /* Space between sections */
+}
+
+/* Icon Styling */
+.carousel-item:nth-child(3) .icon-text i {
+  background-color: white;
+  color: black;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 50%;
+}
 /* RESPONSIVENESS */
 
 /* Small screens (phones, max-width: 768px) */
@@ -344,7 +405,7 @@ body {
 }
 
 /* Practice areas styling */
-.practice-section {
+/* .practice-section {
   background: #1E566C;
   color: white;
   padding: 60px 0;
@@ -378,7 +439,7 @@ body {
 }
 .practice-section .card p {
   color: #d9d7e4;
-}
+} */
 
 /* Insights */
 .insights-container {

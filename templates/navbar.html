@@ -21,28 +21,20 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'about_us' %}">About</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item">
+          {% if first_practice_area %}
           <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="practiceAreasDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
+            class="nav-link"
+            href="{% url 'practice_area_detail' first_practice_area.slug %}"
           >
             Practice Areas
           </a>
-          <ul class="dropdown-menu">
-            {% for area in practice_areas %}
-            <li>
-              <a
-                class="dropdown-item"
-                href="{% url 'practice_area_detail' area.slug %}"
-                >{{ area.name }}</a
-              >
-            </li>
-            {% endfor %}
-          </ul>
+          {% else %}
+          <a class="nav-link" href="#">Practice Areas</a>
+          <!-- Placeholder if none exist -->
+          {% endif %}
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="{% url 'team' %}">Our Team</a>
         </li>

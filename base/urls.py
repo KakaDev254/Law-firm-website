@@ -10,6 +10,7 @@ urlpatterns = [
     
      path('team/', views.team_page, name='team'),
 
+     path('practice-areas/', views.practice_areas_main, name='practice_areas_main'),
      path('practice-area/<slug:slug>/', views.practice_area_detail, name='practice_area_detail'),
      path('careers/', views.careers, name='careers'),
 ]

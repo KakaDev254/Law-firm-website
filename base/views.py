@@ -6,7 +6,10 @@ from .models import Blog, Comment, PracticeArea, TeamMember, Job
 from .forms import CommentForm, ContactForm
 
 
-
+def base_context(request):
+    return {
+        'first_practice_area': PracticeArea.objects.first()
+    }
 def home(request):
     blogs = Blog.objects.order_by('-published_at')[:4]
     practice_areas = PracticeArea.objects.all()
@@ -32,6 +35,7 @@ def home(request):
 
     context = {
         'practice_areas': practice_areas,
+        'first_practice_area': PracticeArea.objects.first(),
         'blogs': blogs,
         'form': form,  # ✅ Ensure the form is passed to the template
         'success_message': success_message,  # ✅ Ensure success message is passed
@@ -80,11 +84,14 @@ def blog(request, blog_id=None):
         "comments": comments,  # ✅ Pass comments (with admin responses)
         "form": form,
     })
+def practice_areas_main(request):
+    practice_areas = PracticeArea.objects.all()
+    return render(request, 'base/practice.html', {'practice_areas': practice_areas})
 
 def practice_area_detail(request, slug):
     practice_area = get_object_or_404(PracticeArea, slug=slug)
     practice_areas = PracticeArea.objects.all()
-    return render(request, 'base/practice.html', {'practice_area': practice_area, 'practice_areas': practice_areas,})
+    return render(request, 'base/practice.html', {'practice_area': practice_area, 'practice_areas': practice_areas,'first_practice_area': PracticeArea.objects.first()})
 
 def careers(request):
     jobs = Job.objects.all()

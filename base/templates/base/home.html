@@ -17,7 +17,7 @@ CO.ADVOCATES{% endblock title %} {% block content %}
           >
         </div>
       </div>
-      <!-- Slide 2 -->
+      <!-- Slide 3 -->
       <div class="carousel-item">
         <!-- Overlay for Background Image -->
         <div class="overlay"></div>
@@ -25,26 +25,70 @@ CO.ADVOCATES{% endblock title %} {% block content %}
           <div class="row h-100 align-items-center">
             <!-- Left Column: Text Content -->
             <div
-              class="col-md-6 d-flex justify-content-center align-items-center"
-            >
-              <div class="text-center text-white p-4">
-                <p class="lead">
-                  G.M Orina & Co. Advocates is a Kenyan based law firm providing
-                  legal counsel and solutions to a wide range of clients in
-                  Kenya, Africa, and globally.
-                </p>
-              </div>
+            class="col-md-6 d-flex justify-content-center align-items-center"
+          >
+            <div class="text-center text-white p-4">
+              <p class="lead">
+                G.M Orina & Co. Advocates is a Kenyan based law firm providing
+                legal counsel and solutions to a wide range of clients in
+                Kenya, Africa, and globally.
+              </p>
             </div>
-            <!-- Right Column: Logo or Image -->
+          </div>
+          <!-- Right Column: Logo or Image -->
+            <div
+            class="col-md-6 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="{% static 'images/gm logo.PNG' %}"
+              alt="GM Orina & Co. Advocates Logo"
+              class="img-fluid rounded"
+            />
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <!-- Overlay for Background Image -->
+        <div class="overlay"></div>
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <!-- Left Column: Text Content -->
+            <div
+            class="col-md-6 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="{% static 'images/core.jpg' %}"
+              alt="Core Values"
+              class="img-fluid rounded"
+            />
+          </div>
+          <!-- Right Column: Logo or Image -->
             <div
               class="col-md-6 d-flex justify-content-center align-items-center"
             >
-              <img
-                src="{% static 'images/gm logo.PNG' %}"
-                alt="GM Orina & Co. Advocates Logo"
-                class="img-fluid rounded"
-              />
+              <div class="text-center text-white p-4">
+                <i class="fas fa-clock fa-2x"></i>
+                <h3>Effectiveness</h3>
+                <p class="lead">
+                  We recognize that our client's concerns are crucial. We are quick to respond to their concerns and act upon them promptly.
+                </p>
+                <i class="fas fa-chart-line fa-2x"></i>
+                <h3>Performance Excellence</h3>
+
+                <p class="lead">
+                  We are responsible professionals. We strive to meet and even exceed Client expectations.
+                </p>
+                <i class="fas fa-balance-scale fa-2x  "></i>
+                <h3>Integrity</h3>
+
+                <p class="lead">
+                  We recognize that long-lasting and successful business relationships are built on integrity, which is one of our core values.
+                </p>
+              </div>
             </div>
+            
+            
           </div>
         </div>
       </div>
@@ -71,71 +115,10 @@ CO.ADVOCATES{% endblock title %} {% block content %}
   </div>
 </section>
 
-<section class="values">
-  <div class="container text-center">
-    <h2 class="section-title">OUR CORE VALUES</h2>
 
-    <div class="row mt-4">
-      <div class="col-md-4">
-        <div class="values-body">
-          <i class="fas fa-clock fa-3x"></i>
-          <h5 class="values-title">Effectiveness</h5>
-          <p class="values-text">
-            We recognize that our client's concerns are crucial. We are quick to
-            respond to their concerns and act upon them promptly.
-          </p>
-        </div>
-      </div>
 
-      <div class="col-md-4">
-        <div class="values-body">
-          <i class="fas fa-chart-line fa-3x"></i>
-          <h5 class="values-title">Performance Excellence</h5>
-          <p class="values-text">
-            We are responsible professionals. We strive to meet and even exceed
-            Client expectations.
-          </p>
-        </div>
-      </div>
 
-      <div class="col-md-4">
-        <div class="values-body">
-          <i class="fas fa-balance-scale fa-3x"></i>
 
-          <h5 class="values-title">Integrity</h5>
-          <p class="values-text">
-            We recognize that long-lasting and successful business relationships
-            are built on integrity, which is one of our core values
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<hr />
-<section class="parctice-container">
-  <div class="bg"></div>
-  <div class="areacontent"></div>
-</section>
-<section class="practice-section">
-  <div class="container">
-    <h2 class="text-center mb-5">Our Practice Areas</h2>
-    <div class="row">
-      {% for area in practice_areas %}
-      <div class="col-md-4">
-        <div class="card text-dark">
-          <div class="card-body">
-            <h5 class="card-title">{{ area.name }}</h5>
-            <p class="card-text">
-              {{ practice_area.detailed_description|safe }}
-            </p>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
 <div class="image-container1">
   <div class="overlay1"></div>
   <div class="parallex1">
@@ -168,7 +151,7 @@ CO.ADVOCATES{% endblock title %} {% block content %}
           <img
             src="{% if blog.cover_image %}{{ blog.cover_image.url }}{% else %}{{ MEDIA_URL }}blog_covers/default_cover.jpg{% endif %}"
             class="card-image"
-            alt="{{ blog.title }}"
+            alt="{{ blog.title }}"loading="lazy"
           />
           <div class="overlay"></div>
           <div class="card-body">
